@@ -46,4 +46,12 @@
   <ItemGroup>
     <ResourceCompile Include="mandis-demo-anime.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="style-sheet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="i18n.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
