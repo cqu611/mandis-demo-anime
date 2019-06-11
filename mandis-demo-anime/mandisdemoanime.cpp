@@ -16,33 +16,51 @@ mandisdemoanime::mandisdemoanime(QWidget *parent)
     //this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
     //this->setFixedSize(QApplication::desktop()->width(), QApplication::desktop()->height());
 
-    settingsButton = new QPushButton(this);
-    settingsButton->setText(i18nSettings);
-    settingsButton->setStyleSheet(SETTINGS_BUTTON_STYLE_SHEET);
+    //settingsButton = new QPushButton(this);
+    //settingsButton->setText(i18nSettings);
+    //settingsButton->setStyleSheet(SETTINGS_BUTTON_STYLE_SHEET);
     //settingsButton->resize(60, 60);
-    settingsButton->setGeometry(1, 1, 60, 60);
-    settingsButton->show();
+    //settingsButton->setGeometry(1, 1, 60, 60);
+    //settingsButton->show();
 
     startButton = new QPushButton(this);
     startButton->setText(i18nStart);
     startButton->setStyleSheet(START_BUTTON_STYLE_SHEET);
-    startButton->setGeometry(1, 62, 60, 60);
+    startButton->setGeometry(1, 1, 60, 60);
     startButton->show();
 
-    settingsDialog = new QDialog(this);
-    settingsDialog->setWindowTitle("Settings");
-    settingsDialog->setFixedSize(400, 300);
-    settingsDialog->hide();
+    //this->statusBar()->showMessage("aaaaaaaaaaaaaaaaaaa",10000);
 
-    connect(settingsButton, SIGNAL(clicked()), this, SLOT(onSettings()));
+    //settingsDialog = new QDialog(this);
+    //settingsDialog->setWindowTitle("Settings");
+    //settingsDialog->setFixedSize(400, 300);
+    //settingsDialog->setWindowFlags(Qt::FramelessWindowHint);
+    //QPalette pl = settingsDialog->palette();
+    //pl.setColor(QPalette::Window, QColor(255, 255, 255));
+    //settingsDialog->setPalette(pl);
+    //settingsDialog->setAutoFillBackground(true);
+    //settingsDialog->setWindowOpacity(0.7);
+    //settingsDialog->setAttribute(Qt::WA_OpaquePaintEvent, true);
+    //settingsDialog->setAttribute(Qt::WA_TranslucentBackground, true);
+    //settingsDialog->hide();
+
+    nodeCountSpin = new QSpinBox(this);
+    nodeCountSpin->setRange(1, 99);
+    nodeCountSpin->setValue(20);
+    nodeCountSpin->setStyleSheet(SPINBOX_STYLE_SHEET);
+    nodeCountSpin->setGeometry(1, 61, 60, 60);
+    nodeCountSpin->setAlignment(Qt::AlignCenter);
+    nodeCountSpin->show();
+
+    groupCountSpin = new QSpinBox(this);
+    groupCountSpin->setRange(1, 10);
+    groupCountSpin->setValue(4);
+    groupCountSpin->setStyleSheet(SPINBOX_STYLE_SHEET);
+    groupCountSpin->setGeometry(1, 121, 60, 60);
+    groupCountSpin->setAlignment(Qt::AlignCenter);
+    groupCountSpin->show();
+
     connect(startButton, SIGNAL(clicked()), this, SLOT(onStart()));
-}
-
-void mandisdemoanime::onSettings() {
-    if (settingsDialog->isHidden())
-        settingsDialog->show();
-    else
-        settingsDialog->hide();
 }
 
 void mandisdemoanime::onStart() {

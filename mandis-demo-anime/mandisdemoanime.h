@@ -2,8 +2,9 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_mandisdemoanime.h"
-
+#include <qlabel.h>
 #include <qpushbutton.h>
+#include <qspinbox.h>
 
 
 class mandisdemoanime : public QMainWindow
@@ -16,14 +17,13 @@ public:
 
 private:
     Ui::mandisdemoanimeClass ui;
-    QPushButton *settingsButton = nullptr;
     QPushButton *startButton = nullptr;
-    QDialog *settingsDialog = nullptr;
     int runningStatus = false;
 
-
+    QSpinBox *nodeCountSpin = nullptr;
+    QSpinBox *groupCountSpin = nullptr;
+    
 
 private slots:
-    void onSettings();
     void onStart();
 };
